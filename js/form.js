@@ -31,7 +31,6 @@ class Form{
         this.button.style('color','white');
 
         this.button.mousePressed(()=>{
-            console.log(this);
             this.input.hide();
             this.button.hide();
 
@@ -46,6 +45,16 @@ class Form{
             this.greeting.style('color','black');
             this.greeting.style('font-size','80px')
         });
+
+        
+    var restart = createButton("RESTART");
+    restart.position(displayWidth-100, 10);
+    restart.mousePressed(()=>{
+      player.updateCount(0);
+      game.update(0);
+      location.reload();
+     Player.updateCarsAtEnd(0);
+    })
 
     }
     hide(){

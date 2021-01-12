@@ -7,7 +7,7 @@ var tiles=[];
 var maxTiles = 20;
 
 function preload(){
-bg = loadImage("../Images/bg.jpg")
+bg = loadImage("Images/bg.jpg")
 }
 
 function setup()
@@ -24,9 +24,13 @@ game.start();
 }
 
 function draw() {
-  background(bg);  
+  background(0);  
 
   
+  // if(gameState === 0){
+  //    background(bg);
+  // }
+
   if(playerCount === 2){
     game.updateState(1);
   }

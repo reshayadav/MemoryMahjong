@@ -36,10 +36,10 @@ class Game{
     }
     play()
     {
-      console.log("hi");
+    
       form.hide();
       
-      drawSprites();
+      drawSprite();
     }
     
 }
