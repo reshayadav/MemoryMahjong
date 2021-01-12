@@ -24,7 +24,7 @@ game.start();
 }
 
 function draw() {
-  background(0);  
+  background(bg);  
 
   
   // if(gameState === 0){
