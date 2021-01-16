@@ -2,6 +2,7 @@ var database;
 var form,game,player,allPlayers;
 var bg;
 var gameState =0;
+var turn;
 var playerCount=0;
 var tiles=[];
 var maxTiles = 20;

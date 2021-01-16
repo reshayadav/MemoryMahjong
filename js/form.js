@@ -51,9 +51,12 @@ class Form{
     restart.position(displayWidth-100, 10);
     restart.mousePressed(()=>{
       player.updateCount(0);
-      game.update(0);
+      game.updateState(0);
       location.reload();
-     Player.updateCarsAtEnd(0);
+      game.updateTurn(1);
+      database.ref("/").update({
+          players : null
+      });
     })
 
     }

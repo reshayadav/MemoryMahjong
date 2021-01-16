@@ -29,7 +29,21 @@ class Game{
         
         form = new Form();
         form.display();
+        }
+        let y = 0;
+        let x = 0;
+        for(var i=0;i<maxTiles;i++){
+          
+      tiles[i] = createSprite(width/4+50*x+10,height/4+y,40,50);
+         x = x + 1;
+          if((i+1)%5 == 0){
+            y = y+ 60;
+            x = 0;
+          }
       }
+      
+
+
         
   
       
@@ -42,4 +56,16 @@ class Game{
       drawSprite();
     }
     
+    updateTurn(turn){
+      database.ref('/').update({
+        turn : turn
+      })
+    }
+
+    getTurn(){
+      var turnRef = database.ref("turn");
+      turnRef.on("value",function(data){
+        turn = data.val();
+      })
+    }
 }
