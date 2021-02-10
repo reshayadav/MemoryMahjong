@@ -12,25 +12,26 @@ class Form{
     display(){
        
         this.title.html("Memory Mahjong");
-        this.title.position(displayWidth/2-250, 20);
-        this.title.style('color','black');
+        this.title.position(displayWidth/2-300, 20);
+        this.title.style('color','#06878E');
         this.title.style('font-size','80px')
-        this.title.style('background','lightpink')
+       
         
-        this.input.position(displayWidth/2 -40,displayHeight/2 -60);
+        this.input.position(displayWidth/2 -90,displayHeight/2 -60);
         this.input.style('width','180px');
         this.input.style('height','50px');
         this.input.style('font-size','50px');
-        this.input.style('background','red')
+        this.input.style('background','#E87C7D')
        
-        this.button.position(displayWidth/2 +5, displayHeight/2);
+        this.button.position(displayWidth/2 -45, displayHeight/2);
         this.button.style('width','100px');
         this.button.style('height','50px');
         this.button.style('font-size','40px');
-        this.button.style('background','blue');
-        this.button.style('color','white');
+        this.button.style('color','black');
+        this.button.style('background','#E88C7D')
 
         this.button.mousePressed(()=>{
+            click2Sound.play();
             this.input.hide();
             this.button.hide();
 
@@ -41,7 +42,7 @@ class Form{
             player.updateCount(playerCount);
 
             this.greeting.html("Hello "+ player.name);
-            this.greeting.position(displayWidth/2 -70, displayHeight/3);
+            this.greeting.position(displayWidth/2-180, displayHeight/3);
             this.greeting.style('color','black');
             this.greeting.style('font-size','80px')
         });
@@ -57,6 +58,9 @@ class Form{
       database.ref("/").update({
           players : null
       });
+      database.ref("/").update({
+        matchedSprites : null
+    });
     })
 
     }
